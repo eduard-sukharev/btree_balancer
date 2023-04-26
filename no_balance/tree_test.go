@@ -1,6 +1,7 @@
-package main
+package no_balance
 
 import (
+	"reflect"
 	"testing"
 )
 
@@ -30,7 +31,7 @@ func TestBuildTree(t *testing.T) {
 				},
 			},
 		},
-		"unbalanced incrementing tree": {
+		"no_balance incrementing tree": {
 			values: []int{1, 2, 3, 4, 5, 6},
 			want: &Tree{
 				root: &Node{
@@ -85,7 +86,7 @@ func TestBuildTree(t *testing.T) {
 	}
 	for name, tt := range tests {
 		t.Run(name, func(t *testing.T) {
-			if got := BuildTree(tt.values); !TreesAreEqual(got, tt.want) {
+			if got := BuildTree(tt.values); !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("BuildTree() = %v, want %v", got, tt.want)
 			}
 		})

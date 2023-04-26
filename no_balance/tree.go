@@ -1,4 +1,4 @@
-package main
+package no_balance
 
 import "fmt"
 
@@ -27,8 +27,4 @@ func BuildTree(values []int) *Tree {
 	}
 
 	return tree
-}
-
-func TreesAreEqual(t1 *Tree, t2 *Tree) bool {
-	return NodesAreEqual(t1.root, t2.root)
 }
